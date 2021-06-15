@@ -1,5 +1,0 @@
-resource_group_location = "eastus"
-resource_group_name = "tf-storage-rg"
-storage_account_name = "tfsa4962"
-container_name = "tfstate"
-key = "terraform.tfstate"

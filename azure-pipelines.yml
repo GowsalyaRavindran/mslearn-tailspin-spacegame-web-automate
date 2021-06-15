@@ -21,7 +21,7 @@ stages:
 
     steps:
     - task: UseDotNet@2
-      displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
+      displayName: 'Use .NET SDK $(dotnetSdkVersion)'
       inputs:
         version: '$(dotnetSdkVersion)'
 
@@ -80,7 +80,7 @@ stages:
         # Exit when any command returns a failure status.
         set -e
 
-        # Write terraform.tfvars
+        # Write terraform.tfvars.
         echo 'resource_group_location = "'$(ResourceGroupLocation)'"' | tee terraform.tfvars
         # Write backend.tfvars.
         echo 'resource_group_name = "tf-storage-rg"' | tee backend.tfvars
@@ -124,3 +124,4 @@ stages:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
               appName: '$(WebAppNameDev)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+              
